@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.7.0.js"></script>
+    <script src="js/jquery.mask.js"></script>
+    <script src="js/viacep.js"></script>
+    <script src="js/valida.js" defer></script>
+    <script src="js/mascara.js"></script>
+    <title>Formulário Cadastro</title>
+</head>
+<body>
+    <div class="form-area">
+        <form id="validation-form">
+            <h2>Cadastro Cliente</h2>
+            
+            <fieldset>
+                <legend>Dados pessoais</legend>
+                <div class="box-input">
+                    <label for="i_nome">Nome:</label>
+                    <input type="text" placeholder="Nome" id="i_nome" data-rules="required|min=2|name">
+                </div>
+                
+                <div class="box-input">
+                    <label for="i_sobrenome">Sobrenome:</label>
+                    <input type="text" placeholder="Sobrenome" id="i_sobrenome" data-rules="required|min=2|lastName">
+                </div>
+        
+                <div class="box-input">
+                    <label for="i_email">Email:</label>
+                    <input type="text" placeholder="Email" id="i_email" data-rules="required|email">
+                </div>
+
+                <div class="box-input">
+                    <label for="i_cell">Celular:</label>
+                    <input type="text" placeholder="+XX (XX) XXXXX-XXXX" id="i_cell" data-rules="required|celular">
+                </div>
+    
+                <div class="box-input">
+                    <label for="i_nascimento">Data de Nascimento</label>
+                    <input type="date" min="1923-01-01" max="2006-01-01" name="" id="i_nascimento" data-rules="required">
+                </div>
+    
+                <div class="box-input">
+                    <label for="i_cpf">CPF:</label>
+                    <input type="text" placeholder="XXX.XXX.XXX-XX" id="i_cpf" data-rules="required|cpf">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Endereço</legend>
+
+                <div class="box-input">
+                    <label for="i_cep">Cep:</label>
+                    <input type="text" placeholder="XXXXX-XXX" id="i_cep" onblur="pesquisa_cep(this.value)" data-rules="required">
+                </div>
+
+                <div class="box-input">
+                    <label for="i_rua">Rua:</label>
+                    <input type="text" placeholder="Bairro" id="i_rua" data-rules="required">
+                </div>
+
+                <div class="box-input">
+                    <label for="i_bairro">Bairro:</label>
+                    <input type="text" placeholder="Bairro" id="i_bairro" data-rules="required">
+                </div>
+        
+                <div class="box-input">
+                    <label for="i_cidade">Cidade:</label>
+                    <input type="text" placeholder="Cidade" id="i_cidade" data-rules="required">
+                </div>
+        
+                <div class="box-input">
+                    <label for="i_estado">Estado:</label>
+                    <input type="text" placeholder="Estado" id="i_estado" data-rules="required">
+                </div>
+            </fieldset>
+
+            <input type="submit" class="btt" value="Cadastrar">
+        </form>
+    </div>
+</body>
+</html>
